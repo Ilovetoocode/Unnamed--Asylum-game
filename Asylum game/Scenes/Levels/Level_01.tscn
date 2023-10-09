@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=5 format=3 uid="uid://cjanwm3sy2x37"]
 
+[ext_resource type="Script" path="res://Scripts/player.gd" id="3_fsnbg"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_vgfkr"]
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_66mfc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
 
 [node name="Level_01" type="Node2D"]
 
@@ -19,3 +22,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_66mfc")
 metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(228, 81)
+script = ExtResource("3_fsnbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-314, -126)
+shape = SubResource("CapsuleShape2D_jj33n")
