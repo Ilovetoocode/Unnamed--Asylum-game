@@ -4,12 +4,11 @@
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_tw3g0"]
 [ext_resource type="Texture2D" uid="uid://he05oefcwbvb" path="res://Scenes/Managers/hallway_floor.png" id="3_qo4wo"]
 [ext_resource type="Texture2D" uid="uid://d0out4o8lwpuv" path="res://Scenes/Managers/bckg_hallway.png" id="4_y37jq"]
-
-[sub_resource type="GDScript" id="GDScript_u26fb"]
+[ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="5_trl3x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
-radius = 43.0
-height = 166.0
+radius = 125.0
+height = 980.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
 size = Vector2(3669, 126)
@@ -18,42 +17,23 @@ size = Vector2(3669, 126)
 
 [node name="GameManager" type="Node2D" parent="."]
 
-[node name="UserInterface" type="CanvasLayer" parent="."]
-
-[node name="GameUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -604.0
-offset_right = -10.0
-offset_bottom = -604.0
-grow_horizontal = 2
-grow_vertical = 2
-script = SubResource("GDScript_u26fb")
-metadata/_edit_use_anchors_ = true
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(16, 139)
+position = Vector2(-363, 63)
 script = ExtResource("1_tw3g0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(92, -298)
+position = Vector2(250, -693)
 shape = SubResource("CapsuleShape2D_jj33n")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(79, -293)
-scale = Vector2(0.0711326, 0.0654297)
+position = Vector2(314, -534)
+scale = Vector2(0.322169, 0.327148)
 texture = ExtResource("1_eu3e3")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(565, -499)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 z_index = 1
-position = Vector2(1108, -569)
+position = Vector2(836, -629)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
@@ -62,11 +42,19 @@ shape = SubResource("RectangleShape2D_6cgp2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(702, 79)
-scale = Vector2(1.00165, 1)
+position = Vector2(702, 73.5)
+scale = Vector2(1.00165, 0.989815)
 texture = ExtResource("3_qo4wo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1792, -479)
+position = Vector2(1534, -547)
 scale = Vector2(1, 1.00185)
 texture = ExtResource("4_y37jq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1440, -561)
+texture = ExtResource("5_trl3x")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1524, -539)
+zoom = Vector2(0.32, 0.32)
