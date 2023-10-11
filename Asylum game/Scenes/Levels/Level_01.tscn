@@ -1,50 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=8 format=3 uid="uid://cjanwm3sy2x37"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/Sprite2D.gd" id="1_hbxct"]
-
-[sub_resource type="GDScript" id="GDScript_y8yuv"]
-script/source = "# This script is an autoload, that can be accessed from any other script!
-
-extends Node2D
-
-var score : int = 0
-
-# Adds 1 to score variable
-func add_score():
-	score += 1
-
-# Loads next level
-func load_next_level(next_scene : PackedScene):
-	get_tree().change_scene_to_packed(next_scene)
-"
+[ext_resource type="Texture2D" uid="uid://dodc3me85rbo7" path="res://FnuyJcuaYAAUd3R.jpeg" id="1_eu3e3"]
+[ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_tw3g0"]
+[ext_resource type="Texture2D" uid="uid://he05oefcwbvb" path="res://Scenes/Managers/hallway_floor.png" id="3_qo4wo"]
+[ext_resource type="Texture2D" uid="uid://d0out4o8lwpuv" path="res://Scenes/Managers/bckg_hallway.png" id="4_y37jq"]
 
 [sub_resource type="GDScript" id="GDScript_u26fb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
+radius = 43.0
+height = 166.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
+size = Vector2(3669, 126)
 
 [node name="Level_01" type="Node2D"]
 
 [node name="GameManager" type="Node2D" parent="."]
-script = SubResource("GDScript_y8yuv")
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
-[node name="GameUI" type="Control" parent="UserInterface"]
+[node name="GameUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -604.0
+offset_right = -10.0
+offset_bottom = -604.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_u26fb")
 metadata/_edit_use_anchors_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(228, 81)
+z_index = 1
+position = Vector2(16, 139)
+script = ExtResource("1_tw3g0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-213, -107)
+position = Vector2(92, -298)
 shape = SubResource("CapsuleShape2D_jj33n")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-script = ExtResource("1_hbxct")
+position = Vector2(79, -293)
+scale = Vector2(0.0711326, 0.0654297)
+texture = ExtResource("1_eu3e3")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(565, -499)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(1108, -569)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(704.5, 563)
+shape = SubResource("RectangleShape2D_6cgp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(702, 79)
+scale = Vector2(1.00165, 1)
+texture = ExtResource("3_qo4wo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1792, -479)
+scale = Vector2(1, 1.00185)
+texture = ExtResource("4_y37jq")
