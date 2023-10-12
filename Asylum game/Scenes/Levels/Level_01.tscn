@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_tw3g0"]
 [ext_resource type="Texture2D" uid="uid://he05oefcwbvb" path="res://Scenes/Managers/hallway_floor.png" id="3_qo4wo"]
 [ext_resource type="Texture2D" uid="uid://d0out4o8lwpuv" path="res://Scenes/Managers/bckg_hallway.png" id="4_y37jq"]
-[ext_resource type="Script" path="res://Scenes/Levels/CollisionShape2D.gd" id="5_f26kv"]
+[ext_resource type="Script" path="res://Scenes/Levels/Area2D.gd" id="5_fsetd"]
 [ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="5_trl3x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
@@ -23,16 +23,17 @@ size = Vector2(442, 773)
 
 [node name="GameManager" type="Node2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 z_index = 1
 position = Vector2(-363, 63)
 script = ExtResource("1_tw3g0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["Players"]]
 position = Vector2(250, -693)
 shape = SubResource("CapsuleShape2D_jj33n")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 1
 position = Vector2(314, -534)
 scale = Vector2(0.322169, 0.327148)
 texture = ExtResource("1_eu3e3")
@@ -53,22 +54,25 @@ position = Vector2(702, 73.5)
 scale = Vector2(1.00165, 0.989815)
 texture = ExtResource("3_qo4wo")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1534, -547)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1515, -558)
 scale = Vector2(1, 1.00185)
 texture = ExtResource("4_y37jq")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+script = ExtResource("5_fsetd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+position = Vector2(1437, -564)
+texture = ExtResource("5_trl3x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1489, -524.5)
 shape = SubResource("RectangleShape2D_sn8wu")
-script = ExtResource("5_f26kv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1440, -561)
-texture = ExtResource("5_trl3x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1524, -539)
 zoom = Vector2(0.32, 0.32)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
