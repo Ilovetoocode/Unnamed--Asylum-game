@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://brwyykq0fjod7"]
+[gd_scene load_steps=8 format=3 uid="uid://brwyykq0fjod7"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_ra4tq"]
+[ext_resource type="Script" path="res://Scripts/levelchange.gd" id="1_ryeii"]
 [ext_resource type="Texture2D" uid="uid://dodc3me85rbo7" path="res://FnuyJcuaYAAUd3R.jpeg" id="2_5d4kr"]
 [ext_resource type="Texture2D" uid="uid://5jgr7gdmmuwi" path="res://room2_floor.png" id="3_w8ds8"]
 [ext_resource type="Texture2D" uid="uid://bupfw35pt103s" path="res://Scenes/Prefabs/room2_bckg.png" id="4_j43k2"]
@@ -13,6 +14,7 @@ height = 980.0
 size = Vector2(3669, 72)
 
 [node name="Rm2" type="Node2D"]
+script = ExtResource("1_ryeii")
 
 [node name="GameManager" type="Node2D" parent="."]
 
