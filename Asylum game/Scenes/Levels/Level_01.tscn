@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=13 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Texture2D" uid="uid://dodc3me85rbo7" path="res://FnuyJcuaYAAUd3R.jpeg" id="1_eu3e3"]
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_tw3g0"]
 [ext_resource type="Texture2D" uid="uid://he05oefcwbvb" path="res://Scenes/Managers/hallway_floor.png" id="3_qo4wo"]
 [ext_resource type="Texture2D" uid="uid://d0out4o8lwpuv" path="res://Scenes/Managers/bckg_hallway.png" id="4_y37jq"]
 [ext_resource type="Script" path="res://Scenes/Levels/Area2D.gd" id="5_fsetd"]
+[ext_resource type="Script" path="res://Scenes/Levels/Door3.gd" id="5_r4oif"]
 [ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="5_trl3x"]
+[ext_resource type="Script" path="res://Scenes/Levels/Door2.gd" id="7_ugshp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
 radius = 125.0
@@ -59,8 +61,35 @@ position = Vector2(1515, -558)
 scale = Vector2(1, 1.00185)
 texture = ExtResource("4_y37jq")
 
+[node name="Area2D3" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(1368, 24)
+script = ExtResource("5_r4oif")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D3"]
+position = Vector2(1437, -564)
+texture = ExtResource("5_trl3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(1489, -524.5)
+shape = SubResource("RectangleShape2D_sn8wu")
+
+[node name="Area2D2" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(67, 19)
+script = ExtResource("7_ugshp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D2"]
+position = Vector2(1437, -564)
+texture = ExtResource("5_trl3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1489, -524.5)
+shape = SubResource("RectangleShape2D_sn8wu")
+
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 1
+position = Vector2(-1047, 5)
 script = ExtResource("5_fsetd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
@@ -72,7 +101,13 @@ position = Vector2(1489, -524.5)
 shape = SubResource("RectangleShape2D_sn8wu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(1524, -539)
 zoom = Vector2(0.32, 0.32)
 
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

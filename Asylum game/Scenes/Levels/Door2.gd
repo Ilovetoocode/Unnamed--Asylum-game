@@ -17,7 +17,7 @@ func _on_body_entered(body):
 func _input(event):
 	if  event.is_action_pressed("up") and collide:
 		collide=false
-		get_tree().change_scene_to_file("res://Scenes/Levels/rm2.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/rm3.tscn")
 
 func _on_body_exited(body):
 	collide=false
