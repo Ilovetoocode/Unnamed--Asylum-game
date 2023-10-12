@@ -13,7 +13,7 @@ height = 980.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
 size = Vector2(3669, 126)
 
-[node name="Level_01" type="Node2D"]
+[node name="rm1" type="Node2D"]
 
 [node name="GameManager" type="Node2D" parent="."]
 
