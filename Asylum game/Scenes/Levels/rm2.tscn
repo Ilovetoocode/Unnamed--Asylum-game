@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccpodmt1kocob"]
+[gd_scene load_steps=13 format=3 uid="uid://ccpodmt1kocob"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_1s1bo"]
 [ext_resource type="Script" path="res://Scripts/levelchange.gd" id="1_b1h84"]
 [ext_resource type="Texture2D" uid="uid://bwx7hv8pafsdn" path="res://Scenes/Prefabs/room1_floor.png" id="3_ms8np"]
 [ext_resource type="SpriteFrames" uid="uid://bm6e42cp21ai" path="res://new_sprite_frames.tres" id="3_oqxsi"]
 [ext_resource type="Texture2D" uid="uid://c88gks2w4xj87" path="res://Scenes/Prefabs/room1_bckg.png" id="4_vx73n"]
+[ext_resource type="Script" path="res://Scenes/Levels/notes.gd" id="6_ue6cf"]
+[ext_resource type="Script" path="res://Scenes/Levels/Notescript.gd" id="6_x6f5h"]
+[ext_resource type="Texture2D" uid="uid://c1n38dp8q2gyv" path="res://FnuyJcuaYAAUd3R.jpeg" id="7_g3fut"]
+[ext_resource type="Script" path="res://Scenes/Levels/Label.gd" id="9_ddd5s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
 radius = 125.0
@@ -12,6 +16,9 @@ height = 980.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
 size = Vector2(3669, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqkug"]
+size = Vector2(166, 217)
 
 [node name="Rm2" type="Node2D"]
 script = ExtResource("1_b1h84")
@@ -55,3 +62,36 @@ texture = ExtResource("4_vx73n")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1210, -560)
 zoom = Vector2(0.6, 0.6)
+
+[node name="Note" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Note"]
+position = Vector2(-54, -9)
+script = ExtResource("6_ue6cf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note/Area2D"]
+position = Vector2(1629, -250.5)
+shape = SubResource("RectangleShape2D_iqkug")
+script = ExtResource("6_x6f5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Note/Area2D"]
+position = Vector2(1623, -308)
+scale = Vector2(0.21547, 0.217285)
+texture = ExtResource("7_g3fut")
+
+[node name="Label" type="Label" parent="Note/Area2D"]
+visible = false
+offset_left = 319.0
+offset_top = -1090.0
+offset_right = 2177.0
+offset_bottom = -330.0
+theme_override_font_sizes/font_size = 50
+text = "According to all known laws of aviation,
+ there is no way a bee should be able to fly. 
+It's wings are too small to get its fat little body off the ground. 
+The bee, of course, flies anyway, because bees don't care what humans think 
+is impossible. "
+script = ExtResource("9_ddd5s")
+
+[connection signal="body_entered" from="Note/Area2D" to="Note/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Note/Area2D" to="Note/Area2D/Label" method="_on_area_2d_body_entered"]
