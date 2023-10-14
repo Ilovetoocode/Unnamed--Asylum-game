@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqfbw4si7cfn2"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_mknxj"]
+[ext_resource type="SpriteFrames" uid="uid://bm6e42cp21ai" path="res://new_sprite_frames.tres" id="2_bhc7f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
+radius = 125.0
+height = 980.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
+position = Vector2(-363, 63)
+script = ExtResource("1_mknxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Players"]]
+position = Vector2(250, -693)
+shape = SubResource("CapsuleShape2D_jj33n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(294, -568)
+sprite_frames = ExtResource("2_bhc7f")
+animation = &"walkright"

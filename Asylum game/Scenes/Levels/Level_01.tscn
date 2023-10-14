@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=12 format=3 uid="uid://cjanwm3sy2x37"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_tw3g0"]
-[ext_resource type="SpriteFrames" uid="uid://bm6e42cp21ai" path="res://new_sprite_frames.tres" id="2_idlo0"]
+[ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="1_cthm4"]
 [ext_resource type="Texture2D" uid="uid://he05oefcwbvb" path="res://Scenes/Managers/hallway_floor.png" id="3_qo4wo"]
 [ext_resource type="Texture2D" uid="uid://d0out4o8lwpuv" path="res://Scenes/Managers/bckg_hallway.png" id="4_y37jq"]
 [ext_resource type="Script" path="res://Scenes/Levels/Area2D.gd" id="5_fsetd"]
@@ -9,10 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="5_trl3x"]
 [ext_resource type="Script" path="res://Scenes/Levels/Door2.gd" id="7_ugshp"]
 [ext_resource type="Script" path="res://Scenes/Levels/Hallexit.gd" id="9_di65s"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
-radius = 125.0
-height = 980.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
 size = Vector2(3669, 126)
@@ -27,20 +22,7 @@ size = Vector2(205, 934)
 
 [node name="GameManager" type="Node2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-z_index = 1
-position = Vector2(-363, 63)
-script = ExtResource("1_tw3g0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["Players"]]
-position = Vector2(250, -693)
-shape = SubResource("CapsuleShape2D_jj33n")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-z_index = 1
-position = Vector2(294, -568)
-sprite_frames = ExtResource("2_idlo0")
-animation = &"walkright"
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_cthm4")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 z_index = 1
