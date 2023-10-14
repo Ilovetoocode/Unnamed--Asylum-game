@@ -7,4 +7,4 @@ func _ready():
 
 func _input(event):
 	if  event.is_action_pressed("down"):
-		get_tree().change_scene_to_file("res://Scenes/Levels/Stranger things reference/Invhall.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level_01.tscn")
