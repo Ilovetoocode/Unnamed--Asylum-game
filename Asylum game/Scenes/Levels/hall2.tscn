@@ -93,5 +93,6 @@ position = Vector2(2222, -1794)
 position = Vector2(5990, -1884)
 
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D4" to="Area2D4" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
