@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=14 format=3 uid="uid://cjanwm3sy2x37"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_tw3g0"]
 [ext_resource type="SpriteFrames" uid="uid://bm6e42cp21ai" path="res://new_sprite_frames.tres" id="2_idlo0"]
@@ -8,16 +8,20 @@
 [ext_resource type="Script" path="res://Scenes/Levels/Door3.gd" id="5_r4oif"]
 [ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="5_trl3x"]
 [ext_resource type="Script" path="res://Scenes/Levels/Door2.gd" id="7_ugshp"]
+[ext_resource type="Script" path="res://Scenes/Levels/Hallexit.gd" id="9_di65s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
 radius = 125.0
 height = 980.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
-size = Vector2(4798, 126)
+size = Vector2(3669, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn8wu"]
 size = Vector2(442, 773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmmql"]
+size = Vector2(205, 934)
 
 [node name="rm1" type="Node2D"]
 
@@ -44,23 +48,23 @@ position = Vector2(836, -629)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(1269, 563)
+position = Vector2(704.5, 563)
 shape = SubResource("RectangleShape2D_6cgp2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(1268.5, 73.5)
-scale = Vector2(1.32351, 0.989815)
+position = Vector2(681, 73.5)
+scale = Vector2(1.00661, 0.989815)
 texture = ExtResource("3_qo4wo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2100, -558)
-scale = Vector2(1.32214, 1.00185)
+position = Vector2(1515, -558)
+scale = Vector2(1, 1.00185)
 texture = ExtResource("4_y37jq")
 
 [node name="Area2D3" type="Area2D" parent="."]
 z_index = 1
-position = Vector2(1368, 24)
+position = Vector2(1131, -6)
 script = ExtResource("5_r4oif")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D3"]
@@ -98,8 +102,16 @@ position = Vector2(1489, -524.5)
 shape = SubResource("RectangleShape2D_sn8wu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2087, -533)
-zoom = Vector2(0.2, 0.2)
+position = Vector2(1524, -539)
+zoom = Vector2(0.28, 0.28)
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(3236, -1025)
+script = ExtResource("9_di65s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(-7.5, 409)
+shape = SubResource("RectangleShape2D_qmmql")
 
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_body_exited"]
@@ -107,3 +119,4 @@ zoom = Vector2(0.2, 0.2)
 [connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

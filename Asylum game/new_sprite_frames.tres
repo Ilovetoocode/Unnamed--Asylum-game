@@ -43,7 +43,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -60,5 +60,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkright",
-"speed": 4.0
+"speed": 5.0
 }]
