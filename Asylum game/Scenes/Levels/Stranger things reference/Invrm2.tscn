@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://l5tawlrfkhmo"]
+[gd_scene load_steps=7 format=3 uid="uid://l5tawlrfkhmo"]
 
 [ext_resource type="Texture2D" uid="uid://dy4v0warkdqlh" path="res://inverted_rooms/inverted_1/i1_bckg.png" id="1_8anxo"]
+[ext_resource type="Script" path="res://Scripts/Invchange.gd" id="1_ynic6"]
 [ext_resource type="Texture2D" uid="uid://dpmae65cuy5u4" path="res://inverted_rooms/inverted_1/i1_floor.png" id="2_6nwu4"]
 [ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="3_xaur2"]
 [ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="4_0w37d"]
@@ -9,6 +10,7 @@
 size = Vector2(2441, 85)
 
 [node name="invrm2" type="Node2D"]
+script = ExtResource("1_ynic6")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

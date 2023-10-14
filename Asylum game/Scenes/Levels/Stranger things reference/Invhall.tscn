@@ -1,16 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjanwm3sy2x37"]
+[gd_scene load_steps=14 format=3 uid="uid://uyoxgxwcvmhf"]
 
-[ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="1_cthm4"]
-[ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="3_mm66v"]
-[ext_resource type="Texture2D" uid="uid://he05oefcwbvb" path="res://Scenes/Managers/hallway_floor.png" id="3_qo4wo"]
-[ext_resource type="Texture2D" uid="uid://d0out4o8lwpuv" path="res://Scenes/Managers/bckg_hallway.png" id="4_y37jq"]
-[ext_resource type="Script" path="res://Scenes/Levels/Area2D.gd" id="5_fsetd"]
-[ext_resource type="Script" path="res://Scenes/Levels/Door3.gd" id="5_r4oif"]
-[ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="5_trl3x"]
-[ext_resource type="Texture2D" uid="uid://d1kknr7c4e17n" path="res://DOORS copy/d3.png" id="6_erebx"]
-[ext_resource type="Script" path="res://Scenes/Levels/Door2.gd" id="7_ugshp"]
-[ext_resource type="Texture2D" uid="uid://jyhtg4gyds2j" path="res://DOORS copy/d2.png" id="8_o6tjv"]
-[ext_resource type="Script" path="res://Scenes/Levels/Hallexit.gd" id="9_di65s"]
+[ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="2_lk3yv"]
+[ext_resource type="Texture2D" uid="uid://btt3ov5dgjmp8" path="res://inverted_hallway copy.png" id="3_ew22j"]
+[ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="3_hu7nc"]
+[ext_resource type="Script" path="res://Scenes/Levels/Inv3.gd" id="4_b05fd"]
+[ext_resource type="Texture2D" uid="uid://d1kknr7c4e17n" path="res://DOORS copy/d3.png" id="6_v1m38"]
+[ext_resource type="Script" path="res://Scenes/Levels/Inv2.gd" id="7_3xrh8"]
+[ext_resource type="Texture2D" uid="uid://jyhtg4gyds2j" path="res://DOORS copy/d2.png" id="8_hk7hw"]
+[ext_resource type="Script" path="res://Scenes/Levels/Inv.gd" id="9_6h0g4"]
+[ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="10_t2jwg"]
+[ext_resource type="Script" path="res://Scenes/Levels/Hallexit.gd" id="11_8v33i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
 size = Vector2(3669, 126)
@@ -34,29 +33,23 @@ z_index = 1
 position = Vector2(704.5, 563)
 shape = SubResource("RectangleShape2D_6cgp2")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-z_index = 1
-position = Vector2(681, 73.5)
-scale = Vector2(1.00661, 0.989815)
-texture = ExtResource("3_qo4wo")
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lk3yv")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_cthm4")]
-
-[node name="StaticBody2D" parent="." instance=ExtResource("3_mm66v")]
+[node name="StaticBody2D" parent="." instance=ExtResource("3_hu7nc")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1515, -558)
+position = Vector2(1502, -571)
 scale = Vector2(1, 1.00185)
-texture = ExtResource("4_y37jq")
+texture = ExtResource("3_ew22j")
 
 [node name="Area2D3" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(1131, -6)
-script = ExtResource("5_r4oif")
+script = ExtResource("4_b05fd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D3"]
 position = Vector2(829, -560)
-texture = ExtResource("6_erebx")
+texture = ExtResource("6_v1m38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(1489, -524.5)
@@ -65,11 +58,11 @@ shape = SubResource("RectangleShape2D_sn8wu")
 [node name="Area2D2" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(67, 19)
-script = ExtResource("7_ugshp")
+script = ExtResource("7_3xrh8")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D2"]
 position = Vector2(1437, -564)
-texture = ExtResource("8_o6tjv")
+texture = ExtResource("8_hk7hw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(1489, -524.5)
@@ -78,11 +71,11 @@ shape = SubResource("RectangleShape2D_sn8wu")
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(-1047, 5)
-script = ExtResource("5_fsetd")
+script = ExtResource("9_6h0g4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
 position = Vector2(1437, -564)
-texture = ExtResource("5_trl3x")
+texture = ExtResource("10_t2jwg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1489, -524.5)
@@ -94,13 +87,13 @@ zoom = Vector2(0.28, 0.28)
 
 [node name="Area2D4" type="Area2D" parent="."]
 position = Vector2(3236, -1025)
-script = ExtResource("9_di65s")
+script = ExtResource("11_8v33i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(-7.5, 409)
 shape = SubResource("RectangleShape2D_qmmql")
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("3_mm66v")]
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_hu7nc")]
 position = Vector2(5993, -2019)
 
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
