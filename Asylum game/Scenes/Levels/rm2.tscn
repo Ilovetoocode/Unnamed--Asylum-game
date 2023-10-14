@@ -63,7 +63,15 @@ zoom = Vector2(0.4, 0.4)
 [node name="Note" parent="." instance=ExtResource("6_a1odq")]
 
 [node name="Label" parent="Note/Area2D" index="2"]
-text = "This text has been changed from the default of the parent object. Cool!"
+offset_right = 4880.0
+text = "Patient: ███████████████
+
+Believes her home is being invaded by someone at night, despite husband’s reassurances otherwise. 
+Displays signs of hysteria, and becomes hostile when questioned upon her thoughts. 
+Threatened to assault her husband, along with numerous doctors when retrieved from her home. Extreme caution required.
+
+Dr. ████████
+"
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("10_3cuui")]
 position = Vector2(2802, -1895)
