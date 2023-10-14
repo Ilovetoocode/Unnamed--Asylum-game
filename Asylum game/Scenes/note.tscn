@@ -25,6 +25,7 @@ texture = ExtResource("2_we6sa")
 
 [node name="Label" type="Label" parent="Area2D"]
 visible = false
+z_index = 3
 offset_left = 319.0
 offset_top = -1090.0
 offset_right = 2177.0
