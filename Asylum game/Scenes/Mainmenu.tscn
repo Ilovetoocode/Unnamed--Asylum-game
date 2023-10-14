@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuochfpyq2cdg"]
+
+[ext_resource type="Script" path="res://Scenes/STARTGAME.gd" id="1_rsvbq"]
+
+[node name="Mainmenu" type="Node2D"]
+script = ExtResource("1_rsvbq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(85, 18)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -210.0
+offset_top = 253.0
+offset_right = 211.0
+offset_bottom = 311.0
+action_mode = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
