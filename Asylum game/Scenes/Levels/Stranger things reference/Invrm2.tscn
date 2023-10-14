@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://l5tawlrfkhmo"]
+[gd_scene load_steps=8 format=3 uid="uid://l5tawlrfkhmo"]
 
 [ext_resource type="Texture2D" uid="uid://dy4v0warkdqlh" path="res://inverted_rooms/inverted_1/i1_bckg.png" id="1_8anxo"]
 [ext_resource type="Script" path="res://Scripts/Invchange.gd" id="1_ynic6"]
 [ext_resource type="Texture2D" uid="uid://dpmae65cuy5u4" path="res://inverted_rooms/inverted_1/i1_floor.png" id="2_6nwu4"]
 [ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="3_xaur2"]
 [ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="4_0w37d"]
+[ext_resource type="PackedScene" uid="uid://gi71v8u6bpyu" path="res://Scenes/note.tscn" id="6_r6lvw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctue"]
 size = Vector2(2441, 85)
@@ -38,3 +39,10 @@ position = Vector2(1568, -1314)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("4_0w37d")]
 position = Vector2(4113, -1310)
+
+[node name="Note" parent="." instance=ExtResource("6_r6lvw")]
+
+[node name="Area2D" parent="Note" index="0"]
+position = Vector2(-428, 663)
+
+[editable path="Note"]

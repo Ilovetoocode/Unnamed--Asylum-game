@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://jg37iln0mu83"]
+[gd_scene load_steps=8 format=3 uid="uid://jg37iln0mu83"]
 
 [ext_resource type="Script" path="res://Scripts/Invchange.gd" id="1_boyyi"]
 [ext_resource type="Texture2D" uid="uid://sqm8pfw0rfa3" path="res://inverted_rooms/inverted_2/i2_floor.png" id="1_win3b"]
 [ext_resource type="Texture2D" uid="uid://vng06483qhl6" path="res://inverted_rooms/inverted_2/i2_bckg.png" id="2_ws1yd"]
 [ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="3_7bnnk"]
 [ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="4_g7v26"]
+[ext_resource type="PackedScene" uid="uid://gi71v8u6bpyu" path="res://Scenes/note.tscn" id="6_rmx3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctue"]
 size = Vector2(2441, 85)
@@ -19,7 +20,6 @@ position = Vector2(-367, 85)
 texture = ExtResource("1_win3b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(268.5, 605.5)
 shape = SubResource("RectangleShape2D_3ctue")
 
@@ -39,3 +39,10 @@ position = Vector2(1595, -1269)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("4_g7v26")]
 position = Vector2(3516, -1291)
+
+[node name="Note" parent="." instance=ExtResource("6_rmx3l")]
+
+[node name="Area2D" parent="Note" index="0"]
+position = Vector2(-943, 648)
+
+[editable path="Note"]

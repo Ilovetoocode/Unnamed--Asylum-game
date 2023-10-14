@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://gi71v8u6bpyu"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/notes.gd" id="1_cgh1b"]
+[ext_resource type="Texture2D" uid="uid://c1n38dp8q2gyv" path="res://FnuyJcuaYAAUd3R.jpeg" id="2_we6sa"]
+[ext_resource type="Script" path="res://Scenes/Levels/Label.gd" id="3_dwaru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqkug"]
+size = Vector2(166, 217)
+
+[node name="Note" type="Node"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-54, -9)
+script = ExtResource("1_cgh1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1629, -250.5)
+shape = SubResource("RectangleShape2D_iqkug")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1623, -308)
+scale = Vector2(0.21547, 0.217285)
+texture = ExtResource("2_we6sa")
+
+[node name="Label" type="Label" parent="Area2D"]
+visible = false
+offset_left = 319.0
+offset_top = -1090.0
+offset_right = 2177.0
+offset_bottom = -330.0
+theme_override_font_sizes/font_size = 50
+text = "According to all known laws of aviation,
+ there is no way a bee should be able to fly. 
+It's wings are too small to get its fat little body off the ground. 
+The bee, of course, flies anyway, because bees don't care what humans think 
+is impossible. "
+script = ExtResource("3_dwaru")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D/Label" method="_on_area_2d_body_entered"]
