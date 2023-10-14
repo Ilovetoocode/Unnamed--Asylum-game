@@ -14,7 +14,7 @@ radius = 125.0
 height = 980.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
-size = Vector2(3669, 126)
+size = Vector2(4798, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn8wu"]
 size = Vector2(442, 773)
@@ -44,18 +44,18 @@ position = Vector2(836, -629)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(704.5, 563)
+position = Vector2(1269, 563)
 shape = SubResource("RectangleShape2D_6cgp2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(702, 73.5)
-scale = Vector2(1.00165, 0.989815)
+position = Vector2(1268.5, 73.5)
+scale = Vector2(1.32351, 0.989815)
 texture = ExtResource("3_qo4wo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1515, -558)
-scale = Vector2(1, 1.00185)
+position = Vector2(2100, -558)
+scale = Vector2(1.32214, 1.00185)
 texture = ExtResource("4_y37jq")
 
 [node name="Area2D3" type="Area2D" parent="."]
@@ -98,9 +98,8 @@ position = Vector2(1489, -524.5)
 shape = SubResource("RectangleShape2D_sn8wu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2(1524, -539)
-zoom = Vector2(0.32, 0.32)
+position = Vector2(2087, -533)
+zoom = Vector2(0.2, 0.2)
 
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_body_exited"]

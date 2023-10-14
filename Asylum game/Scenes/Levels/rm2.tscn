@@ -35,7 +35,8 @@ position = Vector2(754, -617)
 shape = SubResource("CapsuleShape2D_jj33n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(826, -564)
+position = Vector2(781, -432)
+scale = Vector2(0.856, 0.77)
 sprite_frames = ExtResource("3_oqxsi")
 animation = &"idle"
 
