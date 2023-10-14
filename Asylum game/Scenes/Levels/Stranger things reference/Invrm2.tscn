@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://l5tawlrfkhmo"]
+
+[ext_resource type="Texture2D" uid="uid://dy4v0warkdqlh" path="res://inverted_rooms/inverted_1/i1_bckg.png" id="1_8anxo"]
+[ext_resource type="Texture2D" uid="uid://dpmae65cuy5u4" path="res://inverted_rooms/inverted_1/i1_floor.png" id="2_6nwu4"]
+[ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="3_xaur2"]
+[ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="4_0w37d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctue"]
+size = Vector2(2441, 85)
+
+[node name="invrm2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="I1Floor" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(360, 98)
+texture = ExtResource("2_6nwu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(268.5, 605.5)
+shape = SubResource("RectangleShape2D_3ctue")
+
+[node name="I1Bckg" type="Sprite2D" parent="."]
+position = Vector2(359, 104)
+texture = ExtResource("1_8anxo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(246, 93)
+zoom = Vector2(0.4, 0.4)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_xaur2")]
+position = Vector2(-1042, 768)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("4_0w37d")]
+position = Vector2(1568, -1314)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("4_0w37d")]
+position = Vector2(4113, -1310)

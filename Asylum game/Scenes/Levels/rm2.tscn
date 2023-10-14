@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccpodmt1kocob"]
+[gd_scene load_steps=14 format=3 uid="uid://ccpodmt1kocob"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_1s1bo"]
 [ext_resource type="Script" path="res://Scripts/levelchange.gd" id="1_b1h84"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/Notescript.gd" id="6_x6f5h"]
 [ext_resource type="Texture2D" uid="uid://c1n38dp8q2gyv" path="res://FnuyJcuaYAAUd3R.jpeg" id="7_g3fut"]
 [ext_resource type="Script" path="res://Scenes/Levels/Label.gd" id="9_ddd5s"]
+[ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="10_3cuui"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
 radius = 125.0
@@ -94,6 +95,12 @@ It's wings are too small to get its fat little body off the ground.
 The bee, of course, flies anyway, because bees don't care what humans think 
 is impossible. "
 script = ExtResource("9_ddd5s")
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("10_3cuui")]
+position = Vector2(2802, -1895)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("10_3cuui")]
+position = Vector2(4730, -1910)
 
 [connection signal="body_entered" from="Note/Area2D" to="Note/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Note/Area2D" to="Note/Area2D/Label" method="_on_area_2d_body_entered"]

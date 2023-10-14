@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwe2yi4c7uqbq"]
+[gd_scene load_steps=13 format=3 uid="uid://cwe2yi4c7uqbq"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_5miac"]
 [ext_resource type="SpriteFrames" uid="uid://bm6e42cp21ai" path="res://new_sprite_frames.tres" id="2_lfqv3"]
 [ext_resource type="Texture2D" uid="uid://he05oefcwbvb" path="res://Scenes/Managers/hallway_floor.png" id="3_bnuge"]
 [ext_resource type="Texture2D" uid="uid://d0out4o8lwpuv" path="res://Scenes/Managers/bckg_hallway.png" id="4_ofrjw"]
 [ext_resource type="Script" path="res://Scenes/Levels/finaldoor.gd" id="5_ipwt6"]
+[ext_resource type="Script" path="res://Scenes/Levels/2ndHallexit.gd" id="5_y30f5"]
 [ext_resource type="Texture2D" uid="uid://de4x1a3esceum" path="res://Scenes/Managers/door.png" id="6_2e86r"]
+[ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="7_wreq0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jj33n"]
 radius = 125.0
@@ -13,6 +15,9 @@ height = 980.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgp2"]
 size = Vector2(3669, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03nie"]
+size = Vector2(205, 934)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn8wu"]
 size = Vector2(442, 773)
@@ -56,6 +61,14 @@ position = Vector2(1515, -558)
 scale = Vector2(1, 1.00185)
 texture = ExtResource("4_ofrjw")
 
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(4768, -1557.5)
+script = ExtResource("5_y30f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(-4964, 924.5)
+shape = SubResource("RectangleShape2D_03nie")
+
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(43, -8)
@@ -73,5 +86,12 @@ shape = SubResource("RectangleShape2D_sn8wu")
 position = Vector2(1524, -539)
 zoom = Vector2(0.28, 0.28)
 
+[node name="StaticBody2D2" parent="." instance=ExtResource("7_wreq0")]
+position = Vector2(2222, -1794)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("7_wreq0")]
+position = Vector2(5990, -1884)
+
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
