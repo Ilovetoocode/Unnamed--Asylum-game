@@ -22,7 +22,7 @@ script = ExtResource("1_ryeii")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 z_index = 1
-position = Vector2(-199, 42)
+position = Vector2(-223, 103)
 script = ExtResource("1_ra4tq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["Players"]]
@@ -68,5 +68,19 @@ position = Vector2(5501, -1931)
 
 [node name="Area2D" parent="Note" index="0"]
 position = Vector2(1042, 0)
+
+[node name="Label" parent="Note/Area2D" index="2"]
+offset_left = -628.0
+offset_top = -1092.0
+offset_right = 2414.0
+offset_bottom = -332.0
+text = "Patient: ███████████████
+
+Patient permanently committed after assaulting her husband visiting. 
+Husband seemed distraught with claims she had been screaming, “It followed me here, it’s eyes, watching… watching in the shadows.”
+She refuses to cooperate and shows continued hostility toward the staff. Will continue to observe and move forward with the treatment.
+
+Dr. ████████
+"
 
 [editable path="Note"]
