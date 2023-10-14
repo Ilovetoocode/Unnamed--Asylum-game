@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ccpodmt1kocob"]
+[gd_scene load_steps=13 format=3 uid="uid://ccpodmt1kocob"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/CharacterBody2D.gd" id="1_1s1bo"]
 [ext_resource type="Script" path="res://Scripts/levelchange.gd" id="1_b1h84"]
@@ -6,7 +6,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bm6e42cp21ai" path="res://new_sprite_frames.tres" id="3_oqxsi"]
 [ext_resource type="Texture2D" uid="uid://c88gks2w4xj87" path="res://Scenes/Prefabs/room1_bckg.png" id="4_vx73n"]
 [ext_resource type="Script" path="res://Scenes/Levels/notes.gd" id="6_ue6cf"]
-[ext_resource type="Script" path="res://Scenes/Levels/Notescript.gd" id="6_x6f5h"]
 [ext_resource type="Texture2D" uid="uid://c1n38dp8q2gyv" path="res://FnuyJcuaYAAUd3R.jpeg" id="7_g3fut"]
 [ext_resource type="Script" path="res://Scenes/Levels/Label.gd" id="9_ddd5s"]
 [ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="10_3cuui"]
@@ -75,7 +74,6 @@ script = ExtResource("6_ue6cf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Note/Area2D"]
 position = Vector2(1629, -250.5)
 shape = SubResource("RectangleShape2D_iqkug")
-script = ExtResource("6_x6f5h")
 
 [node name="Sprite2D" type="Sprite2D" parent="Note/Area2D"]
 position = Vector2(1623, -308)
