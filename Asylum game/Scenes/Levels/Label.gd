@@ -1,7 +1,7 @@
 extends Label
 var exitable=false
 @onready var label = get_parent().get_node("Label")
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	if label !=null:
 		label.visible=true
 	exitable=true

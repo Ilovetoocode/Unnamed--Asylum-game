@@ -30,7 +30,7 @@ position = Vector2(754, -617)
 shape = SubResource("CapsuleShape2D_jj33n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(809, -563)
+position = Vector2(809, -518)
 sprite_frames = ExtResource("3_466rv")
 animation = &"idle"
 
@@ -65,5 +65,21 @@ position = Vector2(2964, -1845)
 position = Vector2(4726, -1931)
 
 [node name="Note" parent="." instance=ExtResource("7_6kt8t")]
+
+[node name="Label" parent="Note/Area2D" index="2"]
+offset_left = 478.0
+offset_right = 2336.0
+text = "Patient: ███████████████
+
+Treatment after treatment still continues to show no positive effect on patients behavior. 
+Staff this morning had to forcibly restrain her after she bit into one of the nurses neck. 
+The nurse had to be hospitalized after a significant blood loss. 
+Patient screamed, “It’s coming to this side. It will be too late to leave soon.” 
+These hallucinations seem to only happen during the night or if shadows are present in the room. 
+Patient’s continued erratic behavior seems to be slowing – however, will continue to observe.
+
+Dr. ████████
+
+"
 
 [editable path="Note"]
