@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ldbj3rg8a2g"]
+
+[ext_resource type="SpriteFrames" uid="uid://hf664vplvnkv" path="res://Scenes/Mirror.tres" id="1_m3dey"]
+[ext_resource type="Script" path="res://Scenes/Mirroranim.gd" id="2_15b62"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.500013, 6)
+scale = Vector2(0.599479, 0.605556)
+sprite_frames = ExtResource("1_m3dey")
+animation = &"Mirror"
+script = ExtResource("2_15b62")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
