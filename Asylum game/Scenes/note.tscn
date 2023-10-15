@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://gi71v8u6bpyu"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/notes.gd" id="1_cgh1b"]
-[ext_resource type="Texture2D" uid="uid://c1n38dp8q2gyv" path="res://FnuyJcuaYAAUd3R.jpeg" id="2_we6sa"]
+[ext_resource type="Texture2D" uid="uid://bgtfl8e5xixh8" path="res://note .png" id="2_ycy23"]
 [ext_resource type="Script" path="res://Scenes/Levels/Label.gd" id="3_dwaru"]
 [ext_resource type="Theme" uid="uid://csl53flnc6qtn" path="res://Scenes/Gametext.tres" id="3_jke1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqkug"]
-size = Vector2(166, 217)
+size = Vector2(51, 40)
 
 [node name="Note" type="Node"]
 
@@ -15,13 +15,13 @@ position = Vector2(-54, -9)
 script = ExtResource("1_cgh1b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1629, -250.5)
+position = Vector2(1626.5, -311)
 shape = SubResource("RectangleShape2D_iqkug")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(1623, -308)
 scale = Vector2(0.21547, 0.217285)
-texture = ExtResource("2_we6sa")
+texture = ExtResource("2_ycy23")
 
 [node name="Label" type="Label" parent="Area2D"]
 visible = false

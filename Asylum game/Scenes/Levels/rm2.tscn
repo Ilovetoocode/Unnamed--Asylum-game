@@ -62,6 +62,9 @@ zoom = Vector2(0.4, 0.4)
 
 [node name="Note" parent="." instance=ExtResource("6_a1odq")]
 
+[node name="Area2D" parent="Note" index="0"]
+position = Vector2(-33, 184)
+
 [node name="Label" parent="Note/Area2D" index="2"]
 offset_right = 4880.0
 text = "Patient: ███████████████

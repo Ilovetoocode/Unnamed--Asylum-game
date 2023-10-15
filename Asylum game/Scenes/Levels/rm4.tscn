@@ -66,6 +66,9 @@ position = Vector2(4726, -1931)
 
 [node name="Note" parent="." instance=ExtResource("7_6kt8t")]
 
+[node name="Area2D" parent="Note" index="0"]
+position = Vector2(-54, 177)
+
 [node name="Label" parent="Note/Area2D" index="2"]
 offset_left = 478.0
 offset_right = 2336.0
