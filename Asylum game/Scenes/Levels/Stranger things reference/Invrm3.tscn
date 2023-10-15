@@ -46,7 +46,6 @@ position = Vector2(3516, -1291)
 position = Vector2(-943, 648)
 
 [node name="Label" parent="Note/Area2D" index="2"]
-visible = true
 offset_left = 19.0
 offset_top = -1072.0
 offset_right = 6675.0
