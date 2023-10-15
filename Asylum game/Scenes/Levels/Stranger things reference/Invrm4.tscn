@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://t8gr0o47g1oc"]
+[gd_scene load_steps=9 format=3 uid="uid://t8gr0o47g1oc"]
 
 [ext_resource type="Script" path="res://Scripts/Invchange.gd" id="1_3jbaq"]
 [ext_resource type="Texture2D" uid="uid://b02xisnxwmfhw" path="res://inverted_rooms/inverted_3/i3_floor.png" id="1_vpa0e"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqfbw4si7cfn2" path="res://Scenes/player.tscn" id="3_1tdpx"]
 [ext_resource type="PackedScene" uid="uid://bs2hat3xtrs3k" path="res://Scenes/thewalls.tscn" id="4_nnnfy"]
 [ext_resource type="PackedScene" uid="uid://gi71v8u6bpyu" path="res://Scenes/note.tscn" id="6_20xdv"]
+[ext_resource type="Script" path="res://Scenes/Levels/Stranger things reference/Blooddebts.gd" id="7_xdl4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctue"]
 size = Vector2(2907, 85)
@@ -45,7 +46,10 @@ position = Vector2(2898, -1240)
 [node name="Area2D" parent="Note" index="0"]
 position = Vector2(-1583, 839)
 
-[node name="Label" parent="Note/Area2D" index="2"]
+[node name="HAHA, THE TRAP!" type="Node" parent="Note/Area2D" index="0"]
+script = ExtResource("7_xdl4l")
+
+[node name="Label" parent="Note/Area2D" index="3"]
 offset_left = 144.0
 offset_top = -1076.0
 offset_right = 6397.0
@@ -57,5 +61,7 @@ Patient shows signs of ██████████.
 Do not ████████████████████
 [The rest of the handwriting is illegible…]
 "
+
+[connection signal="body_entered" from="Note/Area2D" to="Note/Area2D/HAHA, THE TRAP!" method="_on_area_2d_body_entered"]
 
 [editable path="Note"]

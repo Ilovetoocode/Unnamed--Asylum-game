@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://couuwljtfu7w2"]
+
+[ext_resource type="Theme" uid="uid://csl53flnc6qtn" path="res://Scenes/Gametext.tres" id="1_psx6q"]
+
+[node name="ENDING" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -552.0
+offset_top = -294.0
+offset_right = 480.0
+offset_bottom = 174.0
+theme = ExtResource("1_psx6q")
+theme_override_font_sizes/font_size = 50
+text = "mark collins, age 45, gave
+himself up to the authorities
+after the incident. he is now
+serving a life sentence"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -569.0
+offset_top = -45.0
+offset_right = 263.0
+offset_bottom = 194.0
+theme = ExtResource("1_psx6q")
+theme_override_font_sizes/font_size = 30
+text = "Welcome home: a game for the Gamecraft fall break week long game  jam. (Theme: Break)
+Animation and background design: Aina
+Title screen: Dakota P
+Writing: Dakota P and Leone Kaige
+Programming and general Godot editor work: Connor Walton
+Thanks for  playing!"
