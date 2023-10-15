@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bislqrp6loo3r"
+path="res://.godot/imported/myuu - MSP#3DANGER.mp3-90266c4e5972331ccaac6a4d54f908a3.mp3str"
+
+[deps]
+
+source_file="res://myuu - MSP#3DANGER.mp3"
+dest_files=["res://.godot/imported/myuu - MSP#3DANGER.mp3-90266c4e5972331ccaac6a4d54f908a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
