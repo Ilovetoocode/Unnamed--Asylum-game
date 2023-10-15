@@ -47,20 +47,16 @@ position = Vector2(-1541, 650)
 
 [node name="Label" parent="Note/Area2D" index="2"]
 visible = true
-offset_left = 133.0
-offset_top = -1118.0
-offset_right = 6386.0
-offset_bottom = -358.0
-text = "Patient: ███████████████
+offset_left = 144.0
+offset_top = -1076.0
+offset_right = 6397.0
+offset_bottom = -316.0
+text = "P████nt: ███████████████
 
-Forcible restraint seems to have subdued the patient. 
-Patient no longer becomes hostile to visitors or staff. 
-However, the patient is now averse to physical contact and reacts as if struck when touched. 
-Patient also refuses meals when offered, and does not offer a reason when verbally requested. 
-Erratic behavior seems to have ceased, but condition has not improved noticeably. 
-Observation and treatment will continue.
-
-Dr. ████████
+Patient shows signs of ██████████. 
+██████████ unsafe ████████████████████ 
+Do not ████████████████████
+[The rest of the handwriting is illegible…]
 "
 
 [editable path="Note"]
