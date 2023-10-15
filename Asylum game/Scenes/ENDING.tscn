@@ -5,24 +5,34 @@
 [node name="ENDING" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = -552.0
-offset_top = -294.0
-offset_right = 480.0
-offset_bottom = 174.0
+offset_left = -349.0
+offset_top = -372.0
+offset_right = 412.0
+offset_bottom = 122.0
 theme = ExtResource("1_psx6q")
-theme_override_font_sizes/font_size = 50
-text = "mark collins, age 45, gave
-himself up to the authorities
-after the incident. he is now
+theme_override_font_sizes/font_size = 30
+text = "And in an instant, everything collapses down upon you. 
+Memories, flooding your mind, fraying the fragile threads holding your psyche together. 
+Moment by moment, piece by piece, 
+you feel the last strings of your sanity unwind as a wave of calm passes through you. 
+
+The truth.
+
+It has found you. It is toying with you. 
+
+It will not let you leave.
+
+And perhaps that is all that you can cling to in this wretched place.
 serving a life sentence"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -569.0
-offset_top = -45.0
-offset_right = 263.0
-offset_bottom = 194.0
+offset_left = -806.0
+offset_top = 227.0
+offset_right = 26.0
+offset_bottom = 455.0
 theme = ExtResource("1_psx6q")
 theme_override_font_sizes/font_size = 30
 text = "Welcome home: a game for the Gamecraft fall break week long game  jam. (Theme: Break)
